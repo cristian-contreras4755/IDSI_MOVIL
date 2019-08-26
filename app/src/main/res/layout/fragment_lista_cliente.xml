@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ListaClienteFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="true"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <ImageButton
+                android:id="@+id/IB_search"
+                android:layout_width="45dp"
+                android:layout_height="36dp"
+                android:background="@color/colorPrimary"
+                android:src="@android:drawable/ic_menu_search" />
+
+            <EditText
+                android:id="@+id/txt_buscar_cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Buscar Cliente"
+                android:inputType="textPersonName"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp" />
+
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_lista_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="137dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

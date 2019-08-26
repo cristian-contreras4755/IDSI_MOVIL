@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "197254829001",
+    "firebase_url": "https://idsi-geo.firebaseio.com",
+    "project_id": "idsi-geo",
+    "storage_bucket": "idsi-geo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197254829001:android:9fe4a85cd0e402e7",
+        "android_client_info": {
+          "package_name": "com.example.usuario.idsiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197254829001-svqssq1fn5aepppindgl3dkvlbmj3v26.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.usuario.idsiapp.Activities",
+            "certificate_hash": "d436a35ad5e4751f35a5af1fd4a7c605fedcb0e3"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMfVRwtZ_DtabQbiZA1YWLXNZdKhmeteE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197254829001-43icsl43uio88e0as2vq7bjhqpmm62pa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

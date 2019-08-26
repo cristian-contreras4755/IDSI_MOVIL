@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Login"
+    android:background="@color/colorblanco">
+
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:theme="@style/Animation.Design.BottomSheetDialog"
+        android:visibility="gone" />
+
+
+
+    <LinearLayout
+        android:id="@+id/a"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp">
+
+
+
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+           >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="180dp"
+                android:layout_height="188dp"
+                android:layout_marginTop="25dp"
+                app:srcCompat="@drawable/logo_idsi_comun"
+                android:paddingBottom="20dp"/>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp"
+            >
+
+            <EditText
+                android:id="@+id/txt_usuarios"
+                android:background="@drawable/edit_text_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_usuario"
+                android:hint="Usuario"
+                android:inputType="text"
+                android:textColor="@color/colorPlomo"
+                android:textSize="20dp"
+                android:textColorHint="@color/colorblanco"
+                android:paddingBottom="10dp"
+
+
+           />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            >
+
+
+
+            <EditText
+                android:id="@+id/txt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_contrasena"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:background="@drawable/edit_text_bg"
+                android:textSize="20dp"
+                android:paddingBottom="10dp"
+                android:textColorHint="@color/colorblanco"
+                android:textColor="@color/colorPlomo"
+
+                />
+
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp">
+
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:background="@drawable/boton_general"
+                android:text="Iniciar SESION"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                />
+
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

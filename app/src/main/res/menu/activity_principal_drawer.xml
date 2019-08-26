@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_pedido"
+            android:icon="@drawable/pedido"
+            android:title="Nuevo Pedido"
+
+            />
+
+        <item
+            android:id="@+id/nav_producto"
+            android:icon="@drawable/consped"
+            android:title="Listado Pedidos" />
+
+        <item
+            android:id="@+id/nav_cliente"
+            android:icon="@drawable/cliente"
+            android:title="Cliente" />
+
+        <item
+            android:id="@+id/nav_cons_reportes"
+            android:icon="@drawable/reportes"
+            android:title="Consulta stock" />
+
+        <item
+            android:id="@+id/nav_cons_stock_Grilla_reportes"
+            android:icon="@drawable/reportes"
+            android:title="Consulta stock grid" />
+
+
+        <item
+            android:id="@+id/nav_ubic_vendedores"
+            android:icon="@drawable/geo"
+            android:title="Ubicación vendedores" />
+
+    </group>
+
+    <item android:title="Opciones de usuario">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/salir"
+                android:title="Salir" />
+        </menu>
+    </item>
+</menu>
+

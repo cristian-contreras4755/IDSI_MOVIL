@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ClienteTargetActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            >
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                app:cardBackgroundColor="@color/color_primary3"
+                android:paddingBottom="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/lbl1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary2"
+                        android:padding="8dp"
+                        android:textColor="@color/colorblanco"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:text="Datos Principales :"
+
+                        />
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="R. Social :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/lbl_razonsocial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Nombre :"
+                            android:textAlignment="textEnd"
+                            android:paddingEnd="5dp"/>
+
+
+                        <TextView
+                            android:id="@+id/lbl_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_weight="2"
+                            android:gravity="start"
+                            android:text="--" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="T. Doc. :"
+                            android:textAlignment="textEnd"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_tipoDoc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_weight="1"
+                            android:text="--"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Nro Doc. :"
+                            android:textAlignment="textEnd"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_nrodoc"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_weight="1"
+                            android:text="--"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:layout_editor_absoluteY="35dp" />
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Direccion :"
+                            android:textAlignment="textEnd"
+
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_direccion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_weight="1"
+                            android:text="--"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView25"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Pais. :"
+                            android:textAlignment="textEnd"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_pais"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_weight="1"
+                            android:text="--"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:layout_editor_absoluteY="35dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView31"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Ubigeo :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_ubigeo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView35"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Telefono :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_telefono1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView32"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Telefono2 :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/lbl_telefono2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView36"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Correo :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_correo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/color_primary3"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/header_whe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary2"
+                        android:padding="8dp"
+                        android:textColor="@color/colorblanco"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:text="Datos SUNAT:"/>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/textView37"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Fecha Inscripcion :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/lbl_snt_fec_inscrip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--"
+                          />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView38"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Fecha Inicio actividades :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_ini_act"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView39"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Fecha Baja :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_fec_baja"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView41"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Fecha E. Electronica :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_emi_elec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView42"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Estado Contribuyente :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/lbl_snt_est_cntrb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView43"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Condicion Contribuyente :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_cond_cntrb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView44"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Sis. Contable :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_sis_contab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView45"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Emision comprobantes :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_emi_comp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView46"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Comprobantes :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_lst_comp_pago"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView48"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="comps. electronicas :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_lst_comps_elec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView49"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Fec. incripcion PLE :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_fec_ins_ple"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView50"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Tipo Contribuyente :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_tip_cntrb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView51"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Acts. Economico :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_lst_acts_econo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView52"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Telefonos :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_telf_busc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView53"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Sist. Emision Electronicos :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_lst_sis_emi_elec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView54"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Comercio exterior :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_act_com_ext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView55"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Representantes legales :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_lst_rprs_legs1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView56"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Nro. Trabajadores :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_nro_trab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/textView57"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Nro. pres. servicios :"
+                            android:textAlignment="textEnd"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            android:paddingEnd="5dp"/>
+
+                        <TextView
+                            android:id="@+id/lbl_snt_nro_pres_srv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:text="--" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+</LinearLayout>

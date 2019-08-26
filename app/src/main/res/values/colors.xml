@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary2">#0086C3</color> -->
+    <color name="colorPrimary">#0078af</color>
+    <color name="colorPrimary2">#0078af</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#0078af</color>
+    <color name="colorNegro">#040502</color>
+    <color name="colorPlomo">#9E9E9C</color>
+    <color name="colorRojo">#e41437</color>
+    <color name="colorblanco">#ffffff</color>
+    <color name="color_edit_text">#edf9fc</color>
+
+    <!-- COLOR PARA LAS CAJA DE TEXTO LOGIN-->
+    <color name="color_login">  #E5E5E5</color>
+    <color name="color_primary3"> #EBEFF1</color>
+
+
+    <color name="color_text_general"> #E5E5E5</color>
+
+</resources>

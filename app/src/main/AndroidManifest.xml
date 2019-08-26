@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.usuario.idsiapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcherlogo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcherlogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activities.MainActivity" />
+        <activity
+            android:name=".Activities.PrincipalActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activities.ListaClienteActivity" />
+        <activity android:name=".Activities.ListaProductoActivity" />
+        <activity android:name=".Activities.RegistrarPedidoActivity" />
+        <activity android:name=".Activities.Login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".Activities.EmpresaActivity" />
+        <activity android:name=".Activities.ClienteTargetActivity" />
+        <activity android:name=".Activities.ListaClienteTargetActivity" />
+        <activity android:name=".Activities.PruebasActivity" />
+        <activity android:name=".Activities.ListaInvStockActivity" >
+
+
+
+        </activity>
+        <activity android:name=".Activities.ListaInvProdStockActivity">
+
+
+        </activity>
+        <activity android:name=".Activities.ProductoStockTargetActivity"></activity>
+    </application>
+
+</manifest>
