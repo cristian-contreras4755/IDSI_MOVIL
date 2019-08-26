@@ -99,7 +99,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="Cód Comercial:"
+                        android:text="C. Comercial:"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -176,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="Cod. Marca :"
+                        android:text="C. Marca :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -229,7 +229,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="N. Cort Marca :"
+                        android:text="N. C. Marca :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -308,7 +308,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="Cod Clase :"
+                        android:text="C. Clase :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -334,7 +334,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="N. corto Clase :"
+                        android:text="N. C. Clase :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -386,7 +386,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="Cod. S. Clase :"
+                        android:text="C. S. Clase :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -412,7 +412,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="N.Crto S.Clase :"
+                        android:text="N.C. S.Clase :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
