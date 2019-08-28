@@ -622,8 +622,17 @@ public class ListaInvStockActivity extends AppCompatActivity {
     }
 
     public  void  Set_Paginacion(){
+        String pag="";
+       //validamos  paginacion
+        if (paginacionModel.getTotal()<= paginacionModel.getPage_size()){
 
-       String pag="Pag. "+paginacionModel.getPage_nro()+"/"+paginacionModel.getPage_count()+" - Reg. "+paginacionModel.getPage_size()+"/"+paginacionModel.getTotal()+"";
+            pag="Pag. "+paginacionModel.getPage_nro()+"/"+paginacionModel.getPage_count()+" - Reg. "+paginacionModel.getTotal()+"/"+paginacionModel.getTotal()+"";
+
+        }else  {
+
+            pag="Pag. "+paginacionModel.getPage_nro()+"/"+paginacionModel.getPage_count()+" - Reg. "+paginacionModel.getPage_size()+"/"+paginacionModel.getTotal()+"";
+        }
+
         lbl_text_paginacion.setText(pag);
     }
 

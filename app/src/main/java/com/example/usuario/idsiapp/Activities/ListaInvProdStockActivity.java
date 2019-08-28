@@ -301,16 +301,27 @@ public class ListaInvProdStockActivity extends AppCompatActivity implements Text
 
     public void SetPaginacion(){
 
-        String pag="Pag. "+paginacionModel.getPage_nro()+"/"+paginacionModel.getPage_count()+" - Reg. "+paginacionModel.getPage_size()+"/"+paginacionModel.getTotal()+"";
+
+        String pag="";
+        //validamos  paginacion
+        if (paginacionModel.getTotal()<= paginacionModel.getPage_size()){
+
+            pag="Pag. "+paginacionModel.getPage_nro()+"/"+paginacionModel.getPage_count()+" - Reg. "+paginacionModel.getTotal()+"/"+paginacionModel.getTotal()+"";
+
+        }else  {
+
+            pag="Pag. "+paginacionModel.getPage_nro()+"/"+paginacionModel.getPage_count()+" - Reg. "+paginacionModel.getPage_size()+"/"+paginacionModel.getTotal()+"";
+        }
+
         lbl_dato_paginacion.setText(pag);
 
-    }
-
-
-    public  void Bloquearbotones(){
-
+       // String pag="Pag. "+paginacionModel.getPage_nro()+"/"+paginacionModel.getPage_count()+" - Reg. "+paginacionModel.getPage_size()+"/"+paginacionModel.getTotal()+"";
+       // lbl_dato_paginacion.setText(pag);
 
     }
+
+
+
 
 
 
