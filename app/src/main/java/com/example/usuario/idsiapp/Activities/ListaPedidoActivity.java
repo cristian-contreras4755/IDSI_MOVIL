@@ -399,11 +399,9 @@ public class ListaPedidoActivity extends AppCompatActivity {
 
                         if (cod_pedido!=null || cod_pedido!="" ){
 
-                            Intent data = new Intent(getApplicationContext(),ProductoStockTargetActivity.class);
+                            Intent data = new Intent(getApplicationContext(),PedidoTargetActivity.class);
                             data.putExtra("cod_pedido",cod_pedido);
                             startActivity(data);
-
-
                         }else  {
 
                             return;

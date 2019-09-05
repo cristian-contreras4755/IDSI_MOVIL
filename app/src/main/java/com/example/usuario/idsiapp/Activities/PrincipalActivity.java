@@ -258,13 +258,14 @@ public class PrincipalActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_producto) {
 
+            Intent I = new Intent(PrincipalActivity.this,ListaPedidoActivity.class);
+            startActivity(I);
             //EnviarPosicion();
           //  Toast.makeText(getApplicationContext(),Estado_Geolocalizacion_Vendedor+"-"+Intervalo_actualizacion_posicion,Toast.LENGTH_LONG).show();
           //  Intent I = new Intent(PrincipalActivity.this,PruebasActivity.class);
            // startActivity(I);
-
-            Toast.makeText(getApplicationContext(),"estado geo"+Estado_Geolocalizacion_Vendedor,Toast.LENGTH_LONG).show();
-            Toast.makeText(getApplicationContext(),"milisegundos"+Intervalo_actualizacion_posicion,Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(),"estado geo"+Estado_Geolocalizacion_Vendedor,Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(),"milisegundos"+Intervalo_actualizacion_posicion,Toast.LENGTH_LONG).show();
           //  Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG).show();
            // Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG).show();
            // Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG).show();

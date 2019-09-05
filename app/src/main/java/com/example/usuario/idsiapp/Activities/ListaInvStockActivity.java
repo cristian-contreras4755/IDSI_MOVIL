@@ -65,8 +65,6 @@ public class ListaInvStockActivity extends AppCompatActivity {
 
     private  int nro_pagina=1;
     private  int tamanio_pagina=20;
-
-
    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +83,7 @@ public class ListaInvStockActivity extends AppCompatActivity {
        lbl_text_paginacion=(TextView) findViewById(R.id.lbl_paginacion_pedido);
 
 
-       fab_menu=(FloatingActionButton)findViewById(R.id.fab_menu);
+       fab_menu=(FloatingActionButton)findViewById(R.id.fab_menu_ped);
        btn_ant=(ImageButton) findViewById(R.id.btn_ant_pedido);
        btn_next=(ImageButton) findViewById(R.id.btn_next_pedido);
 
