@@ -3,14 +3,20 @@ package com.example.usuario.idsiapp.Activities;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -25,9 +31,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.usuario.idsiapp.Common.NetWorkManager;
 import com.example.usuario.idsiapp.Common.SessionManager;
 import com.example.usuario.idsiapp.Models.ComonModels.PaginacionModel;
-import com.example.usuario.idsiapp.Models.Pedido.Pedido;
 import com.example.usuario.idsiapp.Models.Pedido.PedidoSimple;
-import com.example.usuario.idsiapp.Models.ProductoStockSimple;
 
 import com.example.usuario.idsiapp.R;
 
@@ -38,7 +42,6 @@ import java.util.ArrayList;
 
 public class ListaPedidoActivity extends AppCompatActivity {
 
-
     private SessionManager sessionManager;
     private NetWorkManager netWorkManager;
     private String ruc_empresa;
@@ -48,6 +51,8 @@ public class ListaPedidoActivity extends AppCompatActivity {
     private PaginacionModel paginacionModel;
 
     private ArrayList<PedidoSimple> ListaPedido;
+    private ArrayList<PedidoSimple> ListaPedidoTemp;
+    private FloatingActionButton fab_menu;
 
     private String UrlServices;
     private String TextoBuscar;
@@ -72,6 +77,7 @@ public class ListaPedidoActivity extends AppCompatActivity {
         TbL_pedido=(TableLayout) findViewById(R.id.Tbl_Pedido);
 
         ruc_empresa= sessionManager.ObtenerRuc_Session("ruc_global");
+        UrlBase=netWorkManager.GetUrlBaseServices();
         codvendedor= sessionManager.ObtenerCodVendedor_Session("codvendedor_global");
         // ruc_empresa=getIntent().getStringExtra("ruc_empresa"); recepcion de ruc por intent
         Toast.makeText(getApplicationContext(),"codvendedor :"+codvendedor,Toast.LENGTH_LONG).show();
@@ -80,14 +86,139 @@ public class ListaPedidoActivity extends AppCompatActivity {
         btn_ant=(ImageButton) findViewById(R.id.btn_ant_pedido);
         btn_next=(ImageButton) findViewById(R.id.btn_next_pedido);
         btn_buscar_pedido=(ImageButton) findViewById(R.id.btn_buscar_pedido);
-        txt_buscar_pedido=(EditText) findViewById(R.id.txt_buscar_cliente_pedido);
+        txt_buscar_pedido=(EditText) findViewById(R.id.txt_buscar_cli_pedido);
         lbl_paginacion_pedido=(TextView) findViewById(R.id.lbl_paginacion_pedido);
+
+        fab_menu=(FloatingActionButton)findViewById(R.id.fab_menu_pedido);
+        ConsultaServicioPedido();
+        btn_buscar_pedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TbL_pedido.removeAllViews();
+                TextoBuscar=txt_buscar_pedido.getText().toString();
+                buscar=true;
+                nro_pagina=1;
+                tamanio_pagina=20;
+                ConsultaServicioPedido();
+            }
+        });
+
+
+        btn_ant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (paginacionModel!=null ){
+
+                    if (paginacionModel.getPage_nro()>1){
+
+                        nro_pagina=paginacionModel.getPage_nro()-1;
+                        if (nro_pagina!=0){
+
+                            TbL_pedido.removeAllViews();
+                            ConsultaServicioPedido();
+                            btn_next.setEnabled(true);
+                        }else {
+
+                            btn_ant.setEnabled(false);
+                            btn_next.setEnabled(true);
+                        }
+
+                    }else{
+                        btn_ant.setEnabled(false);
+                    }
+                }
+            }
+        });
+
+
+
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (paginacionModel!=null ){
+
+
+                    if (paginacionModel.getPage_count()>=nro_pagina){
+
+                        nro_pagina=paginacionModel.getPage_nro()+1;
+
+                        TbL_pedido.removeAllViews();
+                        ConsultaServicioPedido();
+                    }else{
+                        btn_next.setEnabled(false);
+                        btn_ant.setEnabled(true);
+                    }
+                }
+
+            }
+        });
+
+        fab_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder Ab =new AlertDialog.Builder(ListaPedidoActivity.this);
+                View vista=getLayoutInflater().inflate(R.layout.dialog_pagination,null);
+                final Spinner spiner1=(Spinner)vista.findViewById(R.id.spiner_cant_pag_dialog);
+
+                Ab.setIcon(R.mipmap.ic_launcher_logo);
+                Ab.setTitle("Configuración");
+                Ab.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        tamanio_pagina=Integer.parseInt(spiner1.getSelectedItem().toString());
+                        // Toast.makeText(getApplicationContext(),""+spiner1.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
+                String[] array = {"20", "50","100"};
+                ArrayAdapter<String> adapterSpinner;
+                adapterSpinner = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item, array);
+                spiner1.setAdapter(adapterSpinner);
+                spiner1.setSelection(1);
+                Ab.setView(vista);
+                AlertDialog dialog=Ab.create();
+                Ab.create();
+                Ab.show();
+            }
+        });
+
+
+
+
+        txt_buscar_pedido.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(ListaPedido!=null){
+                    Filtrar( ListaPedido,  txt_buscar_pedido.getText().toString()); Filtrar( ListaPedido,  txt_buscar_pedido.getText().toString());
+                }
+
+            }
+        });
+
+
 
     }
 
-
-
-
+    @Override
+    public Resources.Theme getTheme() {
+        return super.getTheme();
+    }
 
 
 
@@ -102,9 +233,9 @@ public class ListaPedidoActivity extends AppCompatActivity {
         //http://idsierp.dyndns.org:5000/api/Pedido/ObtenerPedidosVendedor?RucE=20160000001&FecD=10-01-2019&FecH=10-01-2019&Cd_Vdr=VND0002&pageNro=1&pageSize=20
 //http://idsierp.dyndns.org:5000/api/Pedido/ObtenerPedidosVendedor?RucE=20160000001&FecD=10-01-2019&FecH=10-01-2019&Cd_Vdr=VND0002&TextSearch=barra&pageNro=1&pageSize=20
         if (buscar && TextoBuscar.length()!=0){
-            UrlServices=UrlBase+"/Inventario/ObtenerStockProductos_simple?RucE="+ruc_empresa+"&FecD=01-01-2010&FecH=01-01-2010&TextSearch="+TextoBuscar+"&pageNro="+nro_pagina+"&pageSize="+tamanio_pagina;
+            UrlServices=UrlBase+"/Pedido/ObtenerPedidosVendedor?RucE="+ruc_empresa+"&FecD=01-01-2010&FecH=01-01-2010&Cd_Vdr="+codvendedor+"&TextSearch="+TextoBuscar+"&pageNro="+nro_pagina+"&pageSize="+tamanio_pagina;
         }else {
-            UrlServices= UrlBase+"/Inventario/ObtenerStockProductos_simple?RucE="+ruc_empresa+"&FecD=01-01-2010&FecH=01-01-2010&pageNro="+nro_pagina+"&pageSize="+tamanio_pagina;
+            UrlServices= UrlBase+"/Pedido/ObtenerPedidosVendedor?RucE="+ruc_empresa+"&FecD=01-01-2010&FecH=01-01-2010&Cd_Vdr="+codvendedor+"&pageNro="+nro_pagina+"&pageSize="+tamanio_pagina;
         }
 
 
@@ -116,6 +247,7 @@ public class ListaPedidoActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try{
+
 
                             paginacionModel= new PaginacionModel();
                             ListaPedido= new ArrayList<>();
@@ -138,7 +270,6 @@ public class ListaPedidoActivity extends AppCompatActivity {
                                 pedidoSimple.setTotal(Objecto.getString("total"));
                                 pedidoSimple.setEstado(Objecto.getString("estado"));
                                 ListaPedido.add(pedidoSimple);
-
                             }
 
 
@@ -167,8 +298,6 @@ public class ListaPedidoActivity extends AppCompatActivity {
         });
         RQue.add(Requeste);
     }
-
-
 
     public void poblar(ArrayList<PedidoSimple> listaPedido){
         try {
@@ -207,7 +336,7 @@ public class ListaPedidoActivity extends AppCompatActivity {
 
 
             TextView tv4 = new TextView(this);
-            tv4.setText("total");
+            tv4.setText("Total");
             tv4.setTextColor(Color.WHITE);
             tv4.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv4);
@@ -237,7 +366,7 @@ public class ListaPedidoActivity extends AppCompatActivity {
             for (int i=0;i<listaPedido.size();i++){
 
 
-                View tableRow = LayoutInflater.from(this).inflate(R.layout.elemento_item_listastockprod,null,false);
+                View tableRow = LayoutInflater.from(this).inflate(R.layout.elemento_item_listapedido,null,false);
 
 
                 TextView txt_ped_cod_pedido=(TextView)tableRow.findViewById(R.id.txt_ped_cod_pedido);
@@ -265,15 +394,15 @@ public class ListaPedidoActivity extends AppCompatActivity {
                         TableRow row =(TableRow)v.getParent();
                         TextView txt_codped =(TextView)row.getChildAt(0);
 
-                        String cod_ped=(String) txt_codped.getText();
+                        String cod_pedido=(String) txt_codped.getText();
 
 
-                        if (cod_ped!=null || cod_ped!="" ){
-                            /*
+                        if (cod_pedido!=null || cod_pedido!="" ){
+
                             Intent data = new Intent(getApplicationContext(),ProductoStockTargetActivity.class);
-                            data.putExtra("cod_prod",cod_ped);
+                            data.putExtra("cod_pedido",cod_pedido);
                             startActivity(data);
-                            */
+
 
                         }else  {
 
@@ -288,11 +417,36 @@ public class ListaPedidoActivity extends AppCompatActivity {
             progressDialog.dismiss();
         }catch (Exception ex){
             progressDialog.dismiss();
-            Toast.makeText(getApplicationContext(),"error al cosultar"+ex.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"error al poblar"+ex.getMessage(),Toast.LENGTH_LONG).show();
         }
 
     }
 
+    public void Filtrar(ArrayList<PedidoSimple> listaPedido,String  textoFiltro){
+
+        try {
+            ListaPedidoTemp =(ArrayList<PedidoSimple>)listaPedido.clone();
+
+            for (int i=0;i<listaPedido.size();i++){
+
+                if (!(listaPedido.get(i).getCliente().toLowerCase()).contains(textoFiltro.toLowerCase())){
+                    ListaPedidoTemp.remove(listaPedido.get(i));
+                }
+            }
+
+            TbL_pedido.removeAllViews();
+            if (ListaPedidoTemp.size()>0){
+                poblar(ListaPedidoTemp);
+            }else {
+
+                Toast.makeText(getApplicationContext(),"No se encontro clientes con : "+textoFiltro,Toast.LENGTH_LONG).show();
+            }
+        }catch (Exception ex){
+
+            Toast.makeText(getApplicationContext(),"Error al filtrar"+ex.getMessage(),Toast.LENGTH_LONG).show();
+        }
+
+    }
 
     public void AlertEspera(String Titulo, String Mensaje){
         progressDialog = new ProgressDialog(this);
@@ -333,9 +487,6 @@ public class ListaPedidoActivity extends AppCompatActivity {
 
         lbl_paginacion_pedido.setText(pag);
     }
-
-
-
 
 
 }
