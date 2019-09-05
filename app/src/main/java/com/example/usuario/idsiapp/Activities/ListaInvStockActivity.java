@@ -16,14 +16,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -39,8 +37,6 @@ import com.example.usuario.idsiapp.R;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ListaInvStockActivity extends AppCompatActivity {
 
@@ -86,13 +82,14 @@ public class ListaInvStockActivity extends AppCompatActivity {
 
        btn_buscar_lst_producto_Stock=(ImageButton) findViewById(R.id.btn_buscar_lst_producto_Stock);
 
-       lbl_text_paginacion=(TextView) findViewById(R.id.lbl_text_paginacion);
+       lbl_text_paginacion=(TextView) findViewById(R.id.lbl_paginacion_pedido);
 
-       btn_ant=(ImageButton) findViewById(R.id.btn_ant);
-       btn_next=(ImageButton) findViewById(R.id.btn_next);
+
        fab_menu=(FloatingActionButton)findViewById(R.id.fab_menu);
+       btn_ant=(ImageButton) findViewById(R.id.btn_ant_pedido);
+       btn_next=(ImageButton) findViewById(R.id.btn_next_pedido);
 
-       txt_buscar_lst_prod_stock=(EditText) findViewById(R.id.txt_buscar_lst_prod_stock);
+       txt_buscar_lst_prod_stock=(EditText) findViewById(R.id.txt_buscar_cliente_pedido);
 
        ConsultaStock();
        btn_buscar_lst_producto_Stock.setOnClickListener(new View.OnClickListener() {
@@ -498,8 +495,6 @@ public class ListaInvStockActivity extends AppCompatActivity {
                    TextView txt_nombre=(TextView)tableRow.findViewById(R.id.txt_nombre);
 
                    ImageButton btn_render_targetprodstock=(ImageButton)tableRow.findViewById(R.id.btn_render_targetprodstock);
-
-
 
 
                    /*
