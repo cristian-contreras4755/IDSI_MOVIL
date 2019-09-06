@@ -1,11 +1,479 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.PedidoTargetActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        android:paddingBottom="10dp"
+        android:background="@color/color_primary3">
+
+        <LinearLayout
+            android:id="@+id/boom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:background="@color/colorblanco"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.23"
+            tools:layout_editor_absoluteX="0dp"
+            >
+
+            <ImageView
+                android:id="@+id/imv_img_productostock"
+                android:layout_width="185dp"
+                android:layout_height="192dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/img_nofound" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/lbl_NomprodTargetStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingBottom="2dp"
+                    android:text="TextView"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingEnd="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="Código :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_CodprodTargetStock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView50"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="C. Comercial:"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+
+                        android:id="@+id/lbl_cod_comercial_TargetStock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="N.corto :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_NomCortoprodTargetStock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="Descripción :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_DescripcionTargetStock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView65"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="C. Marca :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_CodMarca_TargetStock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView60"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="Marca :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+
+                        android:id="@+id/lbl_Marca_TargetStock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView61"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="N. C. Marca :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+
+                        android:id="@+id/lbl_Marca_NomCorto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView695"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="Stock :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_stockTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView696"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="Clase :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_nom_clase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView697"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="C. Clase :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_cod_clase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView699"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="N. C. Clase :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_nomcortoclase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView698"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="S. Clase :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_nom_sub_clase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView700"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="C. S. Clase :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_cod_sub_clase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView701"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:gravity="end"
+                        android:text="N.C. S.Clase :"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:id="@+id/lbl_nomcorto_sub_clase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="start"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/textView70"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingBottom="2dp"
+                        android:text="Almacenes :"
+                        android:textColor="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    android:orientation="horizontal">
+
+                    <TableLayout
+                        android:id="@+id/TbL_inv_listaProdstockAlm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="5dp">
+
+                    </TableLayout>
+
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 
 

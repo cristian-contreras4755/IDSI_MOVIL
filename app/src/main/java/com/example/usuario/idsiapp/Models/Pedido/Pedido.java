@@ -11,16 +11,23 @@ public class Pedido {
     private String fecha;
     private String obs;
     private String moneda;
+    private String simb_moneda;
+    private String idestado_op;
+    private String estado_op;
+    private String fecha_entrega;
+    private String fecha_vncto ;
+    private String cod_cotizacion;
     private String valor_neto;
     private String base_imponible;
     private String igv;
     private String total;
+
     private  ArrayList <PedidoDet > detalle ;
 
     public Pedido() {
     }
 
-    public Pedido(String cod_pedido, String nro_pedido, String vendedor, String cliente, String fecha, String obs, String moneda, String valor_neto, String base_imponible, String igv, String total, ArrayList<PedidoDet> detalle) {
+    public Pedido(String cod_pedido, String nro_pedido, String vendedor, String cliente, String fecha, String obs, String moneda, String simb_moneda, String idestado_op, String estado_op, String fecha_entrega, String fecha_vncto, String cod_cotizacion, String valor_neto, String base_imponible, String igv, String total, ArrayList<PedidoDet> detalle) {
         this.cod_pedido = cod_pedido;
         this.nro_pedido = nro_pedido;
         this.vendedor = vendedor;
@@ -28,11 +35,65 @@ public class Pedido {
         this.fecha = fecha;
         this.obs = obs;
         this.moneda = moneda;
+        this.simb_moneda = simb_moneda;
+        this.idestado_op = idestado_op;
+        this.estado_op = estado_op;
+        this.fecha_entrega = fecha_entrega;
+        this.fecha_vncto = fecha_vncto;
+        this.cod_cotizacion = cod_cotizacion;
         this.valor_neto = valor_neto;
         this.base_imponible = base_imponible;
         this.igv = igv;
         this.total = total;
         this.detalle = detalle;
+    }
+
+    public String getSimb_moneda() {
+        return simb_moneda;
+    }
+
+    public void setSimb_moneda(String simb_moneda) {
+        this.simb_moneda = simb_moneda;
+    }
+
+    public String getIdestado_op() {
+        return idestado_op;
+    }
+
+    public void setIdestado_op(String idestado_op) {
+        this.idestado_op = idestado_op;
+    }
+
+    public String getEstado_op() {
+        return estado_op;
+    }
+
+    public void setEstado_op(String estado_op) {
+        this.estado_op = estado_op;
+    }
+
+    public String getFecha_entrega() {
+        return fecha_entrega;
+    }
+
+    public void setFecha_entrega(String fecha_entrega) {
+        this.fecha_entrega = fecha_entrega;
+    }
+
+    public String getFecha_vncto() {
+        return fecha_vncto;
+    }
+
+    public void setFecha_vncto(String fecha_vncto) {
+        this.fecha_vncto = fecha_vncto;
+    }
+
+    public String getCod_cotizacion() {
+        return cod_cotizacion;
+    }
+
+    public void setCod_cotizacion(String cod_cotizacion) {
+        this.cod_cotizacion = cod_cotizacion;
     }
 
     public String getCod_pedido() {

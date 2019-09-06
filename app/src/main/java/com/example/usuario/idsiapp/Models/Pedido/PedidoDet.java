@@ -6,28 +6,36 @@ public class PedidoDet {
     private String cod_corp;
     private String descripcion;
     private String unidad_medida;
+    private String unidad_medida_corto;
     private String valor_unitario;
     private String precio_unitario;
     private String cantidad;
     private String pendiente_entrada;
     private String valor;
-    private String dscto_porcentual;
+    private String dscto_porcentual ;
     private String dscto_importe ;
+
+
+
+
+
+
     private String base_imponible;
     private String igv;
     private String incluye_igv;
     private String total;
-    private String obs = null;
+    private String obs ;
     private String cod_almacen;
 
     public PedidoDet() {
     }
 
-    public PedidoDet(String cod_prod, String cod_corp, String descripcion, String unidad_medida, String valor_unitario, String precio_unitario, String cantidad, String pendiente_entrada, String valor, String dscto_porcentual, String dscto_importe, String base_imponible, String igv, String incluye_igv, String total, String obs, String cod_almacen) {
+    public PedidoDet(String cod_prod, String cod_corp, String descripcion, String unidad_medida, String unidad_medida_corto, String valor_unitario, String precio_unitario, String cantidad, String pendiente_entrada, String valor, String dscto_porcentual, String dscto_importe, String base_imponible, String igv, String incluye_igv, String total, String obs, String cod_almacen) {
         this.cod_prod = cod_prod;
         this.cod_corp = cod_corp;
         this.descripcion = descripcion;
         this.unidad_medida = unidad_medida;
+        this.unidad_medida_corto = unidad_medida_corto;
         this.valor_unitario = valor_unitario;
         this.precio_unitario = precio_unitario;
         this.cantidad = cantidad;
@@ -42,6 +50,15 @@ public class PedidoDet {
         this.obs = obs;
         this.cod_almacen = cod_almacen;
     }
+
+    public String getUnidad_medida_corto() {
+        return unidad_medida_corto;
+    }
+
+    public void setUnidad_medida_corto(String unidad_medida_corto) {
+        this.unidad_medida_corto = unidad_medida_corto;
+    }
+
 
 // Getter Methods
 
