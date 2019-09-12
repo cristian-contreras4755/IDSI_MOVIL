@@ -48,10 +48,14 @@ public class PedidoTargetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pedido_target);
         sessionManager= new SessionManager(this);
         netWorkManager= new NetWorkManager(this);
-        ruc_empresa=sessionManager.ObtenerRuc_Session("ruc_global");
-        ruc_empresa="20160000001";
+       /// ruc_empresa=sessionManager.ObtenerRuc_Session("ruc_global");
+
         UrlBase=netWorkManager.GetUrlBaseServices();
-        cod_pedido=getIntent().getStringExtra("cod_pedido");
+       // cod_pedido=getIntent().getStringExtra("cod_pedido");
+
+        ruc_empresa="20160000001";
+        cod_pedido="OP00000002";
+
         RQue= Volley.newRequestQueue(getApplicationContext());
 
     }
@@ -66,12 +70,66 @@ public class PedidoTargetActivity extends AppCompatActivity {
         }
 /*
         if (!netWorkManager.Is_Online()){
-            AlertaError("Validación de conexion de internet","Asegurese de  de  tener cuna conexion a internet.");
+            AlertaError("Validación de conexion de internet","Asegurese de  de  tener una conexion a internet.");
             return;
         }
 */
 
-        UrlServices= UrlBase+"/Inventario/ObtenerStockProdxcod?ruc="+ruc_empresa+"&cd_prod="+"cod_prod";
+
+
+
+/*
+
+
+
+        "pedido": {
+            "cod_pedido": "OP00000002",
+                    "nro_pedido": "OP00000002",
+                    "vendedor": "Hidrogo Scipión, Pablo",
+                    "cliente": "INVERSIONES TECNOLOGICAS JRG S.A.C",
+                    "fecha": "15/01/2016",
+                    "obs": "No se aceptan cambios despues de 1 semana",
+                    "moneda": "Soles",
+                    "simb_moneda": "S/",
+                    "idestado_op": "01",
+                    "estado_op": "Pendiente Entrega",
+                    "fecha_entrega": "20/05/2016",
+                    "fecha_vncto": null,
+                    "cod_cotizacion": "CT00000003",
+                    "valor_neto": "2542.3729000",
+                    "base_imponible": "2542.3729000",
+                    "igv": "457.6271220",
+                    "total": "3000.0000220",
+                    "detalle": [
+            {
+                "cod_prod": "PD00019",
+                    "cod_corp": "LPHP03131",
+                    "descripcion": "Laptop HP 440 G1",
+                    "unidad_medida": "UNIDAD (BIENES)",
+                    "unidad_medida_corto": "UND",
+                    "valor_unitario": "2542.372900000",
+                    "precio_unitario": "3000.0029000",
+                    "cantidad": "1.000000000",
+                    "pendiente_entrada": "1.000",
+                    "valor": "2542.372900000",
+                    "dscto_porcentual": null,
+                    "dscto_importe": null,
+                    "base_imponible": "2542.372900000",
+                    "igv": "457.630000000",
+                    "incluye_igv": "1",
+                    "total": "3000.002900000",
+                    "obs": null,
+                    "cod_almacen": "A01"
+            }
+        ]
+        }
+
+
+
+ */
+
+
+        UrlServices= UrlBase+"/Pedido/ObtenerPedido?ruc_empresa="+ruc_empresa+"&cod_pedido="+cod_pedido;
         AlertEspera("Espere","Cargando..");
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.GET,
                 UrlServices,

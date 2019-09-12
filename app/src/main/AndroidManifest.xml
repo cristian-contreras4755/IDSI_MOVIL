@@ -21,7 +21,15 @@
         android:roundIcon="@mipmap/ic_launcherlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.PedidoTargetActivity"></activity>
+        <activity android:name=".Activities.PedidoTargetActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".Activities.ListaPedidoActivity">
 
 
@@ -36,11 +44,7 @@
         <activity android:name=".Activities.RegistrarPedidoActivity" />
         <activity android:name=".Activities.Login">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".Activities.EmpresaActivity" />
