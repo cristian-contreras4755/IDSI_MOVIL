@@ -2,13 +2,18 @@ package com.example.usuario.idsiapp.Activities;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -42,6 +47,31 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
     private String UrlBase,UrlServices;
+    private  TableLayout  Tbl_pedido_detalle;
+
+
+    private TextView lbl_Tarped_cod_pedido;
+    private TextView lbl_Tarped_nro_pedido;
+    private TextView lbl_Tarped_cliente;
+    private TextView lbl_Tarped_fecha;
+    private TextView lbl_Tarped_obs;
+    private TextView lbl_Tarped_estado_op;
+    private TextView lbl_Tarped_fecha_entrega;
+    private TextView lbl_Tarped_fecha_vncto;
+    private TextView lbl_Tarped_cod_cotizacion;
+    private TextView lbl_Tarped_base_imponible;
+    private TextView lbl_Tarped_igv;
+    private TextView lbl_Tarped_total;
+
+
+
+
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +83,21 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
         UrlBase=netWorkManager.GetUrlBaseServices();
        // cod_pedido=getIntent().getStringExtra("cod_pedido");
+
+        Tbl_pedido_detalle=(TableLayout)findViewById(R.id.Tbl_pedido_detalle) ;
+
+        lbl_Tarped_cod_pedido=(TextView)findViewById(R.id.lbl_Tarped_cod_pedido);
+        lbl_Tarped_nro_pedido=(TextView)findViewById(R.id.lbl_Tarped_nro_pedido);
+        lbl_Tarped_cliente=(TextView)findViewById(R.id.lbl_Tarped_cliente);
+        lbl_Tarped_fecha=(TextView)findViewById(R.id.lbl_Tarped_fecha);
+        lbl_Tarped_obs=(TextView)findViewById(R.id.lbl_Tarped_obs);
+        lbl_Tarped_estado_op=(TextView)findViewById(R.id.lbl_Tarped_estado_op);
+        lbl_Tarped_fecha_entrega=(TextView)findViewById(R.id.lbl_Tarped_fecha_entrega);
+        lbl_Tarped_fecha_vncto=(TextView)findViewById(R.id.lbl_Tarped_fecha_vncto);
+        lbl_Tarped_cod_cotizacion=(TextView)findViewById(R.id.lbl_Tarped_cod_cotizacion);
+        lbl_Tarped_base_imponible=(TextView)findViewById(R.id.lbl_Tarped_base_imponible);
+        lbl_Tarped_igv=(TextView)findViewById(R.id.lbl_Tarped_igv);
+        lbl_Tarped_total=(TextView)findViewById(R.id.lbl_Tarped_total);
 
         ruc_empresa="20160000001";
         cod_pedido="OP00000002";
@@ -88,45 +133,45 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
         "pedido": {
 
-                    "txt_Tarped_cod_pedido": "OP00000002",
-                    "txt_Tarped_nro_pedido": "OP00000002",
-                    "txt_Tarped_vendedor": "Hidrogo Scipión, Pablo",
-                    "txt_Tarped_cliente": "INVERSIONES TECNOLOGICAS JRG S.A.C",
-                    "txt_Tarped_fecha": "15/01/2016",
-                    "txt_Tarped_obs": "No se aceptan cambios despues de 1 semana",
-                    "txt_Tarped_moneda": "Soles",
-                    "txt_Tarped_simb_moneda": "S/",
-                    "txt_Tarped_idestado_op": "01",
-                    "txt_Tarped_estado_op": "Pendiente Entrega",
-                    "txt_Tarped_fecha_entrega": "20/05/2016",
-                    "txt_Tarped_fecha_vncto": null,
-                    "txt_Tarped_cod_cotizacion": "CT00000003",
-                    "txt_Tarped_valor_neto": "2542.3729000",
-                    "txt_Tarped_base_imponible": "2542.3729000",
-                    "txt_Tarped_igv": "457.6271220",
-                    "txt_Tarped_total": "3000.0000220",
+                    "lbl_Tarped_cod_pedido": "OP00000002",
+                    "lbl_Tarped_nro_pedido": "OP00000002",
+                    "lbl_Tarped_vendedor": "Hidrogo Scipión, Pablo",
+                    "lbl_Tarped_cliente": "INVERSIONES TECNOLOGICAS JRG S.A.C",
+                    "lbl_Tarped_fecha": "15/01/2016",
+                    "lbl_Tarped_obs": "No se aceptan cambios despues de 1 semana",
+                    "lbl_Tarped_moneda": "Soles",
+                    "lbl_Tarped_simb_moneda": "S/",
+                    "lbl_Tarped_idestado_op": "01",
+                    "lbl_Tarped_estado_op": "Pendiente Entrega",
+                    "lbl_Tarped_fecha_entrega": "20/05/2016",
+                    "lbl_Tarped_fecha_vncto": null,
+                    "lbl_Tarped_cod_cotizacion": "CT00000003",
+                    "lbl_Tarped_valor_neto": "2542.3729000",
+                    "lbl_Tarped_base_imponible": "2542.3729000",
+                    "lbl_Tarped_igv": "457.6271220",
+                    "lbl_Tarped_total": "3000.0000220",
 
 
                     "detalle": [
             {
                 "cod_prod": "PD00019",
-                    "cod_corp": "LPHP03131",
-                    "descripcion": "Laptop HP 440 G1",
-                    "unidad_medida": "UNIDAD (BIENES)",
-                    "unidad_medida_corto": "UND",
-                    "valor_unitario": "2542.372900000",
-                    "precio_unitario": "3000.0029000",
-                    "cantidad": "1.000000000",
-                    "pendiente_entrada": "1.000",
-                    "valor": "2542.372900000",
-                    "dscto_porcentual": null,
-                    "dscto_importe": null,
-                    "base_imponible": "2542.372900000",
-                    "igv": "457.630000000",
-                    "incluye_igv": "1",
-                    "total": "3000.002900000",
-                    "obs": null,
-                    "cod_almacen": "A01"
+                    "txt_Tarped_cod_corp": "LPHP03131",
+                    "txt_Tarped_descripcion": "Laptop HP 440 G1",
+                    "txt_Tarped_unidad_medida": "UNIDAD (BIENES)",
+                    "txt_Tarped_unidad_medida_corto": "UND",
+                    "txt_Tarped_valor_unitario": "2542.372900000",
+                    "txt_Tarped_precio_unitario": "3000.0029000",
+                    "txt_Tarped_cantidad": "1.000000000",
+                    "txt_Tarped_pendiente_entrada": "1.000",
+                    "txt_Tarped_valor": "2542.372900000",
+                    "txt_Tarped_dscto_porcentual": null,
+                    "txt_Tarped_dscto_importe": null,
+                    "txt_Tarped_base_imponible": "2542.372900000",
+                    "txt_Tarped_igv": "457.630000000",
+                    "txt_Tarped_incluye_igv": "1",
+                    "txt_Tarped_total": "3000.002900000",
+                    "txt_Tarped_obs": null,
+                    "txt_Tarped_cod_almacen": "A01"
             }
         ]
         }
@@ -197,9 +242,8 @@ public class PedidoTargetActivity extends AppCompatActivity {
                                 detalle_Temp.add(pedidoDet);
                             }
                             pedidoObj.setDetalle(detalle_Temp);
+                            GenerarTabla( pedidoObj);
 
-                           // GenerarTabla(listaProdStockAlm);
-                            // comentado por mi
 
                         }catch (Exception ex) {
                             progressDialog.dismiss();
@@ -223,6 +267,151 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
         });
         RQue.add(Requeste);
+    }
+
+
+
+
+    public void GenerarTabla(Pedido pedido){
+
+        try {
+
+            TableRow tbrowTitulos = new TableRow(this);
+            TextView tv0 = new TextView(this);
+            tv0.setText("codigo");
+            tv0.setTextColor(Color.WHITE);
+            tv0.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv0);
+
+
+            TextView tv1 = new TextView(this);
+            tv1.setText("producto");
+            tv1.setTextColor(Color.WHITE);
+            tv1.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv1);
+
+
+            TextView tv2 = new TextView(this);
+            tv2.setText("Stock");
+            tv2.setTextColor(Color.WHITE);
+            tv2.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv2);
+
+
+
+            TextView tv3 = new TextView(this);
+            tv3.setText("Stock");
+            tv3.setTextColor(Color.WHITE);
+            tv3.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv3);
+
+
+            TextView tv4 = new TextView(this);
+            tv4.setText("Stock");
+            tv4.setTextColor(Color.WHITE);
+            tv4.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv4);
+
+
+            TextView tv5 = new TextView(this);
+            tv5.setText("Stock");
+            tv5.setTextColor(Color.WHITE);
+            tv5.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv5);
+
+            TextView tv6 = new TextView(this);
+            tv6.setText("Stock");
+            tv6.setTextColor(Color.WHITE);
+            tv6.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv6);
+
+            TextView tv7 = new TextView(this);
+            tv7.setText("Stock");
+            tv7.setTextColor(Color.WHITE);
+            tv7.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv7);
+
+
+            TextView tv8 = new TextView(this);
+            tv8.setText("Stock");
+            tv8.setTextColor(Color.WHITE);
+            tv8.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv8);
+
+
+
+            TextView tv9 = new TextView(this);
+            tv9.setText("Stock");
+            tv9.setTextColor(Color.WHITE);
+            tv9.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv9);
+
+
+
+
+
+
+
+            tbrowTitulos.setLayoutParams(new TableLayout.LayoutParams(
+                    TableLayout.LayoutParams.WRAP_CONTENT,
+                    TableLayout.LayoutParams.FILL_PARENT));
+
+            Tbl_pedido_detalle.addView(tbrowTitulos);
+
+
+
+            for (int i=0;i<pedido.getDetalle().size();i++){
+
+                View tableRow = LayoutInflater.from(this).inflate(R.layout.elemento_item_listadetpedtarget,null,false);
+
+
+                TextView txt_item=(TextView)tableRow.findViewById(R.id.txt_item);
+                TextView txt_cod_prod=(TextView)tableRow.findViewById(R.id.txt_cod_prod);
+                TextView txt_Tarped_cod_corp=(TextView)tableRow.findViewById(R.id.txt_Tarped_cod_corp);
+                TextView txt_Tarped_descripcion=(TextView)tableRow.findViewById(R.id.txt_Tarped_descripcion);
+                TextView txt_Tarped_unidad_medida_corto=(TextView)tableRow.findViewById(R.id.txt_Tarped_unidad_medida_corto);
+                TextView txt_Tarped_cantidad=(TextView)tableRow.findViewById(R.id.txt_Tarped_cantidad);
+                TextView txt_Tarped_valor_unitario=(TextView)tableRow.findViewById(R.id.txt_Tarped_valor_unitario);
+                TextView txt_Tarped_precio_unitario=(TextView)tableRow.findViewById(R.id.txt_Tarped_precio_unitario);
+                TextView txt_Tarped_dscto=(TextView)tableRow.findViewById(R.id.txt_Tarped_dscto);
+                TextView txt_Tarped_igv=(TextView)tableRow.findViewById(R.id.txt_Tarped_igv);
+                TextView txt_Tarped_total=(TextView)tableRow.findViewById(R.id.txt_Tarped_total);
+
+
+                txt_item.setText(i);
+                txt_cod_prod.setText(pedido.getDetalle().get(i).getCod_prod());
+                txt_Tarped_cod_corp.setText(pedido.getDetalle().get(i).getCod_corp());
+                txt_Tarped_descripcion.setText(pedido.getDetalle().get(i).getDescripcion());
+                txt_Tarped_unidad_medida_corto.setText(pedido.getDetalle().get(i).getUnidad_medida_corto());
+                txt_Tarped_cantidad.setText(pedido.getDetalle().get(i).getCantidad());
+                txt_Tarped_valor_unitario .setText(pedido.getDetalle().get(i).getValor_unitario());
+                txt_Tarped_precio_unitario.setText(pedido.getDetalle().get(i).getPrecio_unitario());
+                txt_Tarped_dscto.setText(pedido.getDetalle().get(i).getDscto_importe());
+                txt_Tarped_igv.setText(pedido.getDetalle().get(i).getIgv());
+                txt_Tarped_total.setText(pedido.getDetalle().get(i).getTotal());
+
+                Tbl_pedido_detalle.addView(tableRow);
+            }
+
+            lbl_Tarped_cod_pedido.setText(pedido.getCod_pedido());
+            lbl_Tarped_nro_pedido.setText(pedido.getNro_pedido());
+            lbl_Tarped_cliente.setText(pedido.getCliente());
+            lbl_Tarped_fecha.setText(pedido.getFecha());
+            lbl_Tarped_obs.setText(pedido.getObs());
+            lbl_Tarped_estado_op.setText(pedido.getEstado_op());
+            lbl_Tarped_fecha_entrega.setText(pedido.getFecha_entrega());
+            lbl_Tarped_fecha_vncto.setText(pedido.getFecha_vncto());
+            lbl_Tarped_cod_cotizacion.setText(pedido.getCod_cotizacion());
+            lbl_Tarped_base_imponible.setText(pedido.getBase_imponible());
+            lbl_Tarped_igv.setText(pedido.getIgv());
+            lbl_Tarped_total.setText(pedido.getTotal());
+
+            progressDialog.dismiss();
+        }catch (Exception ex){
+            progressDialog.dismiss();
+            Toast.makeText(getApplicationContext(),"error al cosultar"+ex.getMessage(),Toast.LENGTH_LONG).show();
+        }
+
     }
 
 

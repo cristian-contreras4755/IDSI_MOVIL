@@ -39,7 +39,7 @@
 
                 <TextView
                     android:id="@+id/lbl_NomprodTargetStock"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -75,7 +75,7 @@
 
 
                     <TextView
-                        android:id="@+id/lbl_CodprodTargetStock"
+                        android:id="@+id/lbl_Tarped_cod_pedido"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
@@ -102,7 +102,7 @@
 
                     <TextView
 
-                        android:id="@+id/lbl_cod_comercial_TargetStock"
+                        android:id="@+id/lbl_Tarped_nro_pedido"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -127,7 +127,7 @@
 
 
                     <TextView
-                        android:id="@+id/lbl_NomCortoprodTargetStock"
+                        android:id="@+id/lbl_Tarped_cliente"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
@@ -152,7 +152,7 @@
 
 
                     <TextView
-                        android:id="@+id/lbl_DescripcionTargetStock"
+                        android:id="@+id/lbl_Tarped_fecha"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
@@ -178,34 +178,7 @@
 
 
                     <TextView
-                        android:id="@+id/lbl_CodMarca_TargetStock"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:gravity="start"
-                        android:text="TextView" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView60"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0"
-                        android:gravity="end"
-                        android:text="Marca :"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/colorPrimary" />
-
-
-                    <TextView
-
-                        android:id="@+id/lbl_Marca_TargetStock"
+                        android:id="@+id/lbl_Tarped_obs"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -232,7 +205,7 @@
 
                     <TextView
 
-                        android:id="@+id/lbl_Marca_NomCorto"
+                        android:id="@+id/lbl_Tarped_estado_op"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="4"
@@ -258,7 +231,7 @@
 
 
                     <TextView
-                        android:id="@+id/lbl_stockTotal"
+                        android:id="@+id/lbl_Tarped_fecha_entrega"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -284,7 +257,7 @@
 
 
                     <TextView
-                        android:id="@+id/lbl_nom_clase"
+                        android:id="@+id/lbl_Tarped_fecha_vncto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -310,7 +283,7 @@
 
 
                     <TextView
-                        android:id="@+id/lbl_cod_clase"
+                        android:id="@+id/lbl_Tarped_cod_cotizacion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -330,13 +303,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="N. C. Clase :"
+                        android:text="Base :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
 
                     <TextView
-                        android:id="@+id/lbl_nomcortoclase"
+                        android:id="@+id/lbl_Tarped_base_imponible"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -356,13 +329,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="S. Clase :"
+                        android:text="Igv :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
 
                     <TextView
-                        android:id="@+id/lbl_nom_sub_clase"
+                        android:id="@+id/lbl_Tarped_igv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -382,39 +355,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="C. S. Clase :"
+                        android:text="Total :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
 
                     <TextView
-                        android:id="@+id/lbl_cod_sub_clase"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:gravity="start"
-                        android:text="TextView" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView701"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0"
-                        android:gravity="end"
-                        android:text="N.C. S.Clase :"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/colorPrimary" />
-
-
-                    <TextView
-                        android:id="@+id/lbl_nomcorto_sub_clase"
+                        android:id="@+id/lbl_Tarped_total"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -443,14 +390,14 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
-
                     android:orientation="horizontal">
 
+
                     <TableLayout
-                        android:id="@+id/TbL_inv_listaProdstockAlm"
+                        android:id="@+id/Tbl_pedido_detalle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -461,7 +408,6 @@
 
 
                 </LinearLayout>
-
 
             </android.support.v7.widget.LinearLayoutCompat>
 
