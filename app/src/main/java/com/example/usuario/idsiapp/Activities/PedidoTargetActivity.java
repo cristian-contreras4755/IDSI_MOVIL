@@ -23,6 +23,7 @@ import com.example.usuario.idsiapp.Models.Pedido.Pedido;
 import com.example.usuario.idsiapp.Models.Pedido.PedidoDet;
 import com.example.usuario.idsiapp.Models.ProdStockAlm;
 import com.example.usuario.idsiapp.R;
+import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -58,6 +59,9 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
         RQue= Volley.newRequestQueue(getApplicationContext());
 
+        ConsultaStock();
+        ConsultaStock();
+
     }
 
 
@@ -83,23 +87,26 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
 
         "pedido": {
-            "cod_pedido": "OP00000002",
-                    "nro_pedido": "OP00000002",
-                    "vendedor": "Hidrogo Scipión, Pablo",
-                    "cliente": "INVERSIONES TECNOLOGICAS JRG S.A.C",
-                    "fecha": "15/01/2016",
-                    "obs": "No se aceptan cambios despues de 1 semana",
-                    "moneda": "Soles",
-                    "simb_moneda": "S/",
-                    "idestado_op": "01",
-                    "estado_op": "Pendiente Entrega",
-                    "fecha_entrega": "20/05/2016",
-                    "fecha_vncto": null,
-                    "cod_cotizacion": "CT00000003",
-                    "valor_neto": "2542.3729000",
-                    "base_imponible": "2542.3729000",
-                    "igv": "457.6271220",
-                    "total": "3000.0000220",
+
+                    "txt_Tarped_cod_pedido": "OP00000002",
+                    "txt_Tarped_nro_pedido": "OP00000002",
+                    "txt_Tarped_vendedor": "Hidrogo Scipión, Pablo",
+                    "txt_Tarped_cliente": "INVERSIONES TECNOLOGICAS JRG S.A.C",
+                    "txt_Tarped_fecha": "15/01/2016",
+                    "txt_Tarped_obs": "No se aceptan cambios despues de 1 semana",
+                    "txt_Tarped_moneda": "Soles",
+                    "txt_Tarped_simb_moneda": "S/",
+                    "txt_Tarped_idestado_op": "01",
+                    "txt_Tarped_estado_op": "Pendiente Entrega",
+                    "txt_Tarped_fecha_entrega": "20/05/2016",
+                    "txt_Tarped_fecha_vncto": null,
+                    "txt_Tarped_cod_cotizacion": "CT00000003",
+                    "txt_Tarped_valor_neto": "2542.3729000",
+                    "txt_Tarped_base_imponible": "2542.3729000",
+                    "txt_Tarped_igv": "457.6271220",
+                    "txt_Tarped_total": "3000.0000220",
+
+
                     "detalle": [
             {
                 "cod_prod": "PD00019",
@@ -141,21 +148,31 @@ public class PedidoTargetActivity extends AppCompatActivity {
                         try{
                             pedidoObj= new Pedido();
                             JSONObject Jobj= new JSONObject(response.toString());
-                            pedidoObj.setCod_pedido(Jobj.get("cod_pedido").toString());
-                            pedidoObj.setNro_pedido(Jobj.get("nro_pedido").toString());
-                            pedidoObj.setVendedor(Jobj.get("vendedor").toString());
-                            pedidoObj.setCliente(Jobj.get("cliente").toString());
-                            pedidoObj.setFecha(Jobj.get("fecha").toString());
-                            pedidoObj.setObs(Jobj.get("obs").toString());
-                            pedidoObj.setMoneda(Jobj.get("moneda").toString());
-                            pedidoObj.setValor_neto(Jobj.get("valor_neto").toString());
-                            pedidoObj.setBase_imponible(Jobj.get("base_imponible").toString());
-                            pedidoObj.setIgv(Jobj.get("igv").toString());
-                            pedidoObj.setTotal(Jobj.get("total").toString());
+
+
+
+                            pedidoObj.setCod_pedido(Jobj.getJSONObject("pedido").getString("cod_pedido"));
+                            pedidoObj.setNro_pedido(Jobj.getJSONObject("pedido").getString("nro_pedido"));
+                            pedidoObj.setVendedor(Jobj.getJSONObject("pedido").getString("vendedor"));
+                            pedidoObj.setCliente(Jobj.getJSONObject("pedido").getString("cliente"));
+                            pedidoObj.setFecha(Jobj.getJSONObject("pedido").getString("fecha"));
+                            pedidoObj.setObs(Jobj.getJSONObject("pedido").getString("obs"));
+                            pedidoObj.setMoneda(Jobj.getJSONObject("pedido").getString("moneda"));
+                            pedidoObj.setSimb_moneda(Jobj.getJSONObject("pedido").getString("simb_moneda"));
+                            pedidoObj.setIdestado_op(Jobj.getJSONObject("pedido").getString("idestado_op"));
+                            pedidoObj.setEstado_op(Jobj.getJSONObject("pedido").getString("estado_op"));
+                            pedidoObj.setFecha_entrega(Jobj.getJSONObject("pedido").getString("fecha_entrega"));
+                            pedidoObj.setFecha_vncto(Jobj.getJSONObject("pedido").getString("fecha_vncto"));
+                            pedidoObj.setCod_cotizacion(Jobj.getJSONObject("pedido").getString("cod_cotizacion"));
+                            pedidoObj.setValor_neto(Jobj.getJSONObject("pedido").getString("valor_neto"));
+                            pedidoObj.setBase_imponible(Jobj.getJSONObject("pedido").getString("base_imponible"));
+                            pedidoObj.setIgv(Jobj.getJSONObject("pedido").getString("igv"));
+                            pedidoObj.setTotal(Jobj.getJSONObject("pedido").getString("total"));
 
 
                             ArrayList <PedidoDet > detalle_Temp= new ArrayList<>();
-                            JSONArray detalle=Jobj.getJSONArray("detalle");
+                            JSONArray detalle=Jobj.getJSONObject("pedido").getJSONArray("detalle");
+
                             for ( int i=0;i<detalle.length();i++ ){
                                 PedidoDet pedidoDet= new PedidoDet();
                                 JSONObject  Objecto=detalle.getJSONObject(i);
@@ -163,6 +180,7 @@ public class PedidoTargetActivity extends AppCompatActivity {
                                 pedidoDet.setCod_corp(Objecto.getString("cod_corp"));
                                 pedidoDet.setDescripcion(Objecto.getString("descripcion"));
                                 pedidoDet.setUnidad_medida(Objecto.getString("unidad_medida"));
+                                pedidoDet.setUnidad_medida_corto(Objecto.getString("unidad_medida_corto"));
                                 pedidoDet.setValor_unitario(Objecto.getString("valor_unitario"));
                                 pedidoDet.setPrecio_unitario(Objecto.getString("precio_unitario"));
                                 pedidoDet.setCantidad(Objecto.getString("cantidad"));
@@ -180,8 +198,8 @@ public class PedidoTargetActivity extends AppCompatActivity {
                             }
                             pedidoObj.setDetalle(detalle_Temp);
 
-
-                           // GenerarTabla(listaProdStockAlm);//comentado por mi
+                           // GenerarTabla(listaProdStockAlm);
+                            // comentado por mi
 
                         }catch (Exception ex) {
                             progressDialog.dismiss();

@@ -31,13 +31,6 @@
             tools:layout_editor_absoluteX="0dp"
             >
 
-            <ImageView
-                android:id="@+id/imv_img_productostock"
-                android:layout_width="185dp"
-                android:layout_height="192dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/img_nofound" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -46,14 +39,15 @@
 
                 <TextView
                     android:id="@+id/lbl_NomprodTargetStock"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingBottom="2dp"
                     android:text="TextView"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:text="Pedido" />
 
             </LinearLayout>
 
@@ -101,7 +95,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="C. Comercial:"
+                        android:text="N. Pedido:"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -127,7 +121,7 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="end"
-                        android:text="N.corto :"
+                        android:text="Cliente  :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -152,7 +146,7 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="end"
-                        android:text="Descripción :"
+                        android:text="Fecha :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -178,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="C. Marca :"
+                        android:text="Obs. :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -231,7 +225,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="N. C. Marca :"
+                        android:text="Estado:"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -258,7 +252,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="Stock :"
+                        android:text="F. Entrega :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -284,7 +278,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="Clase :"
+                        android:text="F. Vencimiento:"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -310,7 +304,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="end"
-                        android:text="C. Clase :"
+                        android:text="C. Cotización :"
                         android:textAlignment="textEnd"
                         android:textColor="@color/colorPrimary" />
 
@@ -442,7 +436,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:paddingBottom="2dp"
-                        android:text="Almacenes :"
+                        android:text="Detalle :"
                         android:textColor="@color/colorPrimary" />
 
                 </LinearLayout>
