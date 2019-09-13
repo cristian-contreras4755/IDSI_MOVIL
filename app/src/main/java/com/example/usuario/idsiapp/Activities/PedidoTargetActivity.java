@@ -105,8 +105,6 @@ public class PedidoTargetActivity extends AppCompatActivity {
         RQue= Volley.newRequestQueue(getApplicationContext());
 
         ConsultaStock();
-        ConsultaStock();
-
     }
 
 
@@ -124,61 +122,6 @@ public class PedidoTargetActivity extends AppCompatActivity {
         }
 */
 
-
-
-
-/*
-
-
-
-        "pedido": {
-
-                    "lbl_Tarped_cod_pedido": "OP00000002",
-                    "lbl_Tarped_nro_pedido": "OP00000002",
-                    "lbl_Tarped_vendedor": "Hidrogo Scipión, Pablo",
-                    "lbl_Tarped_cliente": "INVERSIONES TECNOLOGICAS JRG S.A.C",
-                    "lbl_Tarped_fecha": "15/01/2016",
-                    "lbl_Tarped_obs": "No se aceptan cambios despues de 1 semana",
-                    "lbl_Tarped_moneda": "Soles",
-                    "lbl_Tarped_simb_moneda": "S/",
-                    "lbl_Tarped_idestado_op": "01",
-                    "lbl_Tarped_estado_op": "Pendiente Entrega",
-                    "lbl_Tarped_fecha_entrega": "20/05/2016",
-                    "lbl_Tarped_fecha_vncto": null,
-                    "lbl_Tarped_cod_cotizacion": "CT00000003",
-                    "lbl_Tarped_valor_neto": "2542.3729000",
-                    "lbl_Tarped_base_imponible": "2542.3729000",
-                    "lbl_Tarped_igv": "457.6271220",
-                    "lbl_Tarped_total": "3000.0000220",
-
-
-                    "detalle": [
-            {
-                "cod_prod": "PD00019",
-                    "txt_Tarped_cod_corp": "LPHP03131",
-                    "txt_Tarped_descripcion": "Laptop HP 440 G1",
-                    "txt_Tarped_unidad_medida": "UNIDAD (BIENES)",
-                    "txt_Tarped_unidad_medida_corto": "UND",
-                    "txt_Tarped_valor_unitario": "2542.372900000",
-                    "txt_Tarped_precio_unitario": "3000.0029000",
-                    "txt_Tarped_cantidad": "1.000000000",
-                    "txt_Tarped_pendiente_entrada": "1.000",
-                    "txt_Tarped_valor": "2542.372900000",
-                    "txt_Tarped_dscto_porcentual": null,
-                    "txt_Tarped_dscto_importe": null,
-                    "txt_Tarped_base_imponible": "2542.372900000",
-                    "txt_Tarped_igv": "457.630000000",
-                    "txt_Tarped_incluye_igv": "1",
-                    "txt_Tarped_total": "3000.002900000",
-                    "txt_Tarped_obs": null,
-                    "txt_Tarped_cod_almacen": "A01"
-            }
-        ]
-        }
-
-
-
- */
 
 
         UrlServices= UrlBase+"/Pedido/ObtenerPedido?ruc_empresa="+ruc_empresa+"&cod_pedido="+cod_pedido;
@@ -242,7 +185,7 @@ public class PedidoTargetActivity extends AppCompatActivity {
                                 detalle_Temp.add(pedidoDet);
                             }
                             pedidoObj.setDetalle(detalle_Temp);
-                            GenerarTabla( pedidoObj);
+                            GenerarTabla(pedidoObj);
 
 
                         }catch (Exception ex) {
@@ -250,7 +193,7 @@ public class PedidoTargetActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"1error al cosultar"+ex.getMessage(),Toast.LENGTH_LONG).show();
                             Log.d("error:",ex.getMessage().toString());
 
-                            Log.d("error:",ex.getMessage().toString());
+
                         }
 
 
@@ -276,23 +219,24 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
         try {
 
+
             TableRow tbrowTitulos = new TableRow(this);
             TextView tv0 = new TextView(this);
-            tv0.setText("codigo");
+            tv0.setText("Item");
             tv0.setTextColor(Color.WHITE);
             tv0.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv0);
 
 
             TextView tv1 = new TextView(this);
-            tv1.setText("producto");
+            tv1.setText("Código");
             tv1.setTextColor(Color.WHITE);
             tv1.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv1);
 
 
             TextView tv2 = new TextView(this);
-            tv2.setText("Stock");
+            tv2.setText("Nro.Pedido");
             tv2.setTextColor(Color.WHITE);
             tv2.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv2);
@@ -300,40 +244,40 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
 
             TextView tv3 = new TextView(this);
-            tv3.setText("Stock");
+            tv3.setText("Producto");
             tv3.setTextColor(Color.WHITE);
             tv3.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv3);
 
 
             TextView tv4 = new TextView(this);
-            tv4.setText("Stock");
+            tv4.setText("U. Medida");
             tv4.setTextColor(Color.WHITE);
             tv4.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv4);
 
 
             TextView tv5 = new TextView(this);
-            tv5.setText("Stock");
+            tv5.setText("Cantidad");
             tv5.setTextColor(Color.WHITE);
             tv5.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv5);
 
             TextView tv6 = new TextView(this);
-            tv6.setText("Stock");
+            tv6.setText("Valor unitario");
             tv6.setTextColor(Color.WHITE);
             tv6.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv6);
 
             TextView tv7 = new TextView(this);
-            tv7.setText("Stock");
+            tv7.setText("Precio Unitario");
             tv7.setTextColor(Color.WHITE);
             tv7.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv7);
 
 
             TextView tv8 = new TextView(this);
-            tv8.setText("Stock");
+            tv8.setText("Descuento");
             tv8.setTextColor(Color.WHITE);
             tv8.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv8);
@@ -341,15 +285,17 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
 
             TextView tv9 = new TextView(this);
-            tv9.setText("Stock");
+            tv9.setText("Igv");
             tv9.setTextColor(Color.WHITE);
             tv9.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
             tbrowTitulos.addView(tv9);
 
 
-
-
-
+            TextView tv10 = new TextView(this);
+            tv10.setText("Total");
+            tv10.setTextColor(Color.WHITE);
+            tv10.setBackground(getDrawable(R.drawable.text_view_cabeceratabla));
+            tbrowTitulos.addView(tv10);
 
 
             tbrowTitulos.setLayoutParams(new TableLayout.LayoutParams(
@@ -364,7 +310,6 @@ public class PedidoTargetActivity extends AppCompatActivity {
 
                 View tableRow = LayoutInflater.from(this).inflate(R.layout.elemento_item_listadetpedtarget,null,false);
 
-
                 TextView txt_item=(TextView)tableRow.findViewById(R.id.txt_item);
                 TextView txt_cod_prod=(TextView)tableRow.findViewById(R.id.txt_cod_prod);
                 TextView txt_Tarped_cod_corp=(TextView)tableRow.findViewById(R.id.txt_Tarped_cod_corp);
@@ -378,7 +323,7 @@ public class PedidoTargetActivity extends AppCompatActivity {
                 TextView txt_Tarped_total=(TextView)tableRow.findViewById(R.id.txt_Tarped_total);
 
 
-                txt_item.setText(i);
+                txt_item.setText("1");
                 txt_cod_prod.setText(pedido.getDetalle().get(i).getCod_prod());
                 txt_Tarped_cod_corp.setText(pedido.getDetalle().get(i).getCod_corp());
                 txt_Tarped_descripcion.setText(pedido.getDetalle().get(i).getDescripcion());
@@ -406,7 +351,9 @@ public class PedidoTargetActivity extends AppCompatActivity {
             lbl_Tarped_igv.setText(pedido.getIgv());
             lbl_Tarped_total.setText(pedido.getTotal());
 
+
             progressDialog.dismiss();
+
         }catch (Exception ex){
             progressDialog.dismiss();
             Toast.makeText(getApplicationContext(),"error al cosultar"+ex.getMessage(),Toast.LENGTH_LONG).show();

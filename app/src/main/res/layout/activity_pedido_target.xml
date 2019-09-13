@@ -44,7 +44,6 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingBottom="2dp"
-                    android:text="TextView"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     tools:text="Pedido" />
@@ -395,6 +394,11 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
 
                     <TableLayout
                         android:id="@+id/Tbl_pedido_detalle"
@@ -405,6 +409,12 @@
                         android:paddingBottom="5dp">
 
                     </TableLayout>
+
+                </ScrollView>
+
+
+
+
 
 
                 </LinearLayout>
