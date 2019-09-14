@@ -79,10 +79,10 @@ public class PedidoTargetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pedido_target);
         sessionManager= new SessionManager(this);
         netWorkManager= new NetWorkManager(this);
-       /// ruc_empresa=sessionManager.ObtenerRuc_Session("ruc_global");
+        ruc_empresa=sessionManager.ObtenerRuc_Session("ruc_global");
 
         UrlBase=netWorkManager.GetUrlBaseServices();
-       // cod_pedido=getIntent().getStringExtra("cod_pedido");
+        cod_pedido=getIntent().getStringExtra("cod_pedido");
 
         Tbl_pedido_detalle=(TableLayout)findViewById(R.id.Tbl_pedido_detalle) ;
 
@@ -99,17 +99,16 @@ public class PedidoTargetActivity extends AppCompatActivity {
         lbl_Tarped_igv=(TextView)findViewById(R.id.lbl_Tarped_igv);
         lbl_Tarped_total=(TextView)findViewById(R.id.lbl_Tarped_total);
 
-        ruc_empresa="20160000001";
-        cod_pedido="OP00000002";
+      //  ruc_empresa="20160000001";
+        //cod_pedido="OP00000002";
 
         RQue= Volley.newRequestQueue(getApplicationContext());
-
-        ConsultaStock();
+        ConsultaPedido();
     }
 
 
 
-    public void ConsultaStock() {
+    public void ConsultaPedido() {
 
         if (ruc_empresa.isEmpty() ||  ruc_empresa==null){
             Toast.makeText(getApplicationContext(),"No puedimos encontrar el ruc de la empresa",Toast.LENGTH_LONG).show();

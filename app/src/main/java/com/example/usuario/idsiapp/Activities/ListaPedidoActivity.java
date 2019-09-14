@@ -393,12 +393,10 @@ public class ListaPedidoActivity extends AppCompatActivity {
 
                         TableRow row =(TableRow)v.getParent();
                         TextView txt_codped =(TextView)row.getChildAt(0);
-
                         String cod_pedido=(String) txt_codped.getText();
 
 
                         if (cod_pedido!=null || cod_pedido!="" ){
-
                             Intent data = new Intent(getApplicationContext(),PedidoTargetActivity.class);
                             data.putExtra("cod_pedido",cod_pedido);
                             startActivity(data);
