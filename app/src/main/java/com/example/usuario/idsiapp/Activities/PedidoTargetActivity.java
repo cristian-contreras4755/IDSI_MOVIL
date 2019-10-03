@@ -136,8 +136,6 @@ public class PedidoTargetActivity extends AppCompatActivity {
                             pedidoObj= new Pedido();
                             JSONObject Jobj= new JSONObject(response.toString());
 
-
-
                             pedidoObj.setCod_pedido(Jobj.getJSONObject("pedido").getString("cod_pedido"));
                             pedidoObj.setNro_pedido(Jobj.getJSONObject("pedido").getString("nro_pedido"));
                             pedidoObj.setVendedor(Jobj.getJSONObject("pedido").getString("vendedor"));
@@ -163,6 +161,8 @@ public class PedidoTargetActivity extends AppCompatActivity {
                             for ( int i=0;i<detalle.length();i++ ){
                                 PedidoDet pedidoDet= new PedidoDet();
                                 JSONObject  Objecto=detalle.getJSONObject(i);
+
+                                pedidoDet.setItem(Integer.toString(i+1));
                                 pedidoDet.setCod_prod(Objecto.getString("cod_prod"));
                                 pedidoDet.setCod_corp(Objecto.getString("cod_corp"));
                                 pedidoDet.setDescripcion(Objecto.getString("descripcion"));
@@ -322,7 +322,7 @@ public class PedidoTargetActivity extends AppCompatActivity {
                 TextView txt_Tarped_total=(TextView)tableRow.findViewById(R.id.txt_Tarped_total);
 
 
-                txt_item.setText("1");
+                txt_item.setText(pedido.getDetalle().get(i).getItem());
                 txt_cod_prod.setText(pedido.getDetalle().get(i).getCod_prod());
                 txt_Tarped_cod_corp.setText(pedido.getDetalle().get(i).getCod_corp());
                 txt_Tarped_descripcion.setText(pedido.getDetalle().get(i).getDescripcion());

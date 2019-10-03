@@ -2,6 +2,7 @@ package com.example.usuario.idsiapp.Models.Pedido;
 
 public class PedidoDet {
 
+    private String item;
     private String cod_prod;
     private String cod_corp;
     private String descripcion;
@@ -15,11 +16,6 @@ public class PedidoDet {
     private String dscto_porcentual ;
     private String dscto_importe ;
 
-
-
-
-
-
     private String base_imponible;
     private String igv;
     private String incluye_igv;
@@ -30,7 +26,8 @@ public class PedidoDet {
     public PedidoDet() {
     }
 
-    public PedidoDet(String cod_prod, String cod_corp, String descripcion, String unidad_medida, String unidad_medida_corto, String valor_unitario, String precio_unitario, String cantidad, String pendiente_entrada, String valor, String dscto_porcentual, String dscto_importe, String base_imponible, String igv, String incluye_igv, String total, String obs, String cod_almacen) {
+    public PedidoDet(String item,String cod_prod, String cod_corp, String descripcion, String unidad_medida, String unidad_medida_corto, String valor_unitario, String precio_unitario, String cantidad, String pendiente_entrada, String valor, String dscto_porcentual, String dscto_importe, String base_imponible, String igv, String incluye_igv, String total, String obs, String cod_almacen) {
+        this.item = item;
         this.cod_prod = cod_prod;
         this.cod_corp = cod_corp;
         this.descripcion = descripcion;
@@ -59,6 +56,13 @@ public class PedidoDet {
         this.unidad_medida_corto = unidad_medida_corto;
     }
 
+    public String getItem() {
+        return item;
+    }
+
+    public void setItem(String item) {
+        this.item = item;
+    }
 
 // Getter Methods
 
@@ -137,7 +141,8 @@ public class PedidoDet {
     }
 
     public void setCod_corp(String cod_corp) {
-        this.cod_corp = cod_corp;
+        //this.cod_corp = cod_corp;
+        this.cod_corp = cod_corp=="null"?"***":cod_corp;
     }
 
     public void setDescripcion(String descripcion) {
@@ -173,7 +178,8 @@ public class PedidoDet {
     }
 
     public void setDscto_importe(String dscto_importe) {
-        this.dscto_importe = dscto_importe;
+       // this.dscto_importe = dscto_importe;
+        this.dscto_importe = dscto_importe=="null"?"***":dscto_importe;
     }
 
     public void setBase_imponible(String base_imponible) {

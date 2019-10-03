@@ -85,7 +85,8 @@ public class Pedido {
     }
 
     public void setFecha_vncto(String fecha_vncto) {
-        this.fecha_vncto = fecha_vncto;
+        //this.fecha_vncto = fecha_vncto;
+        this.fecha_vncto = fecha_vncto=="null"?"***":fecha_vncto;
     }
 
     public String getCod_cotizacion() {
@@ -93,7 +94,9 @@ public class Pedido {
     }
 
     public void setCod_cotizacion(String cod_cotizacion) {
-        this.cod_cotizacion = cod_cotizacion;
+        //this.cod_cotizacion = cod_cotizacion;
+
+        this.cod_cotizacion = cod_cotizacion=="null"?"No tiene cotización":cod_cotizacion;
     }
 
     public String getCod_pedido() {
@@ -141,7 +144,8 @@ public class Pedido {
     }
 
     public void setObs(String obs) {
-        this.obs = obs;
+       // this.obs = obs;
+        this.obs = obs=="null"?"***":obs;
     }
 
     public String getMoneda() {
