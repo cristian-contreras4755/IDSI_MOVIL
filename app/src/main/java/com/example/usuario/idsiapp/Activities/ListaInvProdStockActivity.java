@@ -10,7 +10,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -26,7 +25,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.usuario.idsiapp.Adapters.AdaptadorListaProdStck_lv;
 import com.example.usuario.idsiapp.Common.NetWorkManager;
 import com.example.usuario.idsiapp.Common.SessionManager;
-import com.example.usuario.idsiapp.Models.Cliente;
 import com.example.usuario.idsiapp.Models.ComonModels.PaginacionModel;
 import com.example.usuario.idsiapp.Models.ProductoStock;
 import com.example.usuario.idsiapp.R;
@@ -60,10 +58,17 @@ public class ListaInvProdStockActivity extends AppCompatActivity implements Text
     private int nro_pagina_default=1;
     private int tamanio_pagina_default=20;
 
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_inv_prod_stock);
+
+
 
         lv_lst_prod_stock=(ListView)findViewById(R.id.lv_lst_prod_stock);
         txt_lst_buscar_prodstock=(EditText) findViewById(R.id.txt_lst_buscar_prodstock);
@@ -85,6 +90,7 @@ public class ListaInvProdStockActivity extends AppCompatActivity implements Text
         ruc_empresa=sessionManager.ObtenerRuc_Session("ruc_global");
 
         UrlBase=netWorkManager.GetUrlBaseServices();
+        //UrlBase=netWorkManager.GetUrlBaseServices();
         RQue= Volley.newRequestQueue(getApplicationContext());
 
         txt_lst_buscar_prodstock.addTextChangedListener(this);

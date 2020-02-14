@@ -11,9 +11,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.Filter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,7 +19,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.usuario.idsiapp.Adapters.AdaptadorListaCliente;
 import com.example.usuario.idsiapp.Adapters.AdaptadorListaClienteTarget;
 import com.example.usuario.idsiapp.Common.NetWorkManager;
 import com.example.usuario.idsiapp.Common.SessionManager;
@@ -43,6 +40,7 @@ public class ListaClienteTargetActivity extends AppCompatActivity implements Tex
     private SessionManager sessionManager;
     private String  ruc_empresa;
     private NetWorkManager netWorkManager;
+    private String UrlBase;
 
 
 
@@ -50,11 +48,16 @@ public class ListaClienteTargetActivity extends AppCompatActivity implements Tex
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_cliente_target);
+
+
+
+
         sessionManager= new SessionManager(getApplicationContext());
         txt_buscar_cliente_target=(EditText)findViewById(R.id.txt_buscar_clienteTarget);
         txt_buscar_cliente_target.setEnabled(false);
         RQue=Volley.newRequestQueue(getApplicationContext());
         netWorkManager= new NetWorkManager(getApplicationContext());
+        UrlBase=netWorkManager.GetUrlBaseServices();
 
 
 
@@ -110,7 +113,7 @@ public class ListaClienteTargetActivity extends AppCompatActivity implements Tex
     public  void ConsultarServicio(String ruc_empresa) {
         AlertEspera("Espere","Cargando...");
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.GET,
-                "http://idsierp.dyndns.org:5000/api/Cliente/ObtenerListaClientes?ruc_empresa="+ruc_empresa,
+                UrlBase+"/Cliente/ObtenerListaClientes?ruc_empresa="+ruc_empresa,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override

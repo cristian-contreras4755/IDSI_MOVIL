@@ -13,15 +13,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.usuario.idsiapp.Common.NetWorkManager;
 import com.example.usuario.idsiapp.Common.SessionManager;
-import com.example.usuario.idsiapp.Models.Cliente;
 import com.example.usuario.idsiapp.Models.ClienteTarget;
 import com.example.usuario.idsiapp.R;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 public class ClienteTargetActivity extends AppCompatActivity {
     private RequestQueue RQue;
@@ -50,6 +47,9 @@ public class ClienteTargetActivity extends AppCompatActivity {
     private TextView Tnt_lst_rprs_legs;
     private TextView Telf_busc;
 
+    private String UrlBase;
+    private NetWorkManager netWorkManager;
+
 
 
 
@@ -61,11 +61,21 @@ public class ClienteTargetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        netWorkManager= new NetWorkManager(this);
+        UrlBase=netWorkManager.GetUrlBaseServices();
+
         setContentView(R.layout.activity_cliente_target);
         RQue=Volley.newRequestQueue(getApplicationContext());
         sessionManager= new SessionManager(getApplicationContext());
         cod_cliente=getIntent().getStringExtra("cod_cliente");
         ruc_empresa=sessionManager.ObtenerRuc_Session("ruc_global");
+
+
+
+
+
+
 
 
       //  lbl_ruc=(TextView)findViewById(R.id.lbl_ruc);
@@ -116,7 +126,7 @@ public class ClienteTargetActivity extends AppCompatActivity {
     public  void ConsultarServicio(String ruc_empresa,String cod_cliente) {
       //  AlertEspera("Espere","Cargando...");
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.GET,
-                "http://idsierp.dyndns.org:5000/api/Cliente/ObtenerClientePorCodigo?ruc_empresa="+ruc_empresa+"&cod_cliente="+cod_cliente,
+                UrlBase+"/Cliente/ObtenerClientePorCodigo?ruc_empresa="+ruc_empresa+"&cod_cliente="+cod_cliente,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override

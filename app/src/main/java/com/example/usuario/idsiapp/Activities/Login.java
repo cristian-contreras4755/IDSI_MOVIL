@@ -55,6 +55,9 @@ public class Login extends AppCompatActivity {
     private  ProgressDialog progressDialog ;
     private NetWorkManager netWorkManager;
 
+    private String UrlBase;
+
+
 
 
     @Override
@@ -62,6 +65,9 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         netWorkManager= new NetWorkManager(getApplicationContext());
+        UrlBase=netWorkManager.GetUrlBaseServices();
+
+
         RQue=Volley.newRequestQueue(getApplicationContext());
         btn_login=(Button)findViewById(R.id.btn_login);
 
@@ -114,7 +120,7 @@ public class Login extends AppCompatActivity {
 
 
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.POST,
-                "http://idsierp.dyndns.org:5000/api/Seguridad/Loginmovil",
+                UrlBase+"/Seguridad/Loginmovil",
                 JsonLogin,
                 new Response.Listener<JSONObject>() {
                     @Override

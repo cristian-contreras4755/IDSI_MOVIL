@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.usuario.idsiapp.Adapters.AdaptadorListaCliente;
+import com.example.usuario.idsiapp.Common.NetWorkManager;
 import com.example.usuario.idsiapp.Models.Cliente;
 import com.example.usuario.idsiapp.R;
 
@@ -47,6 +48,11 @@ public class ListaClienteFragment extends Fragment {
     private AdaptadorListaCliente adaptadorListaCliente;
     private FragmentActivity ContextoActividadPrincipal;
     private IEnviarDatos iEnviarDatos;
+
+    private String UrlBase;
+    private NetWorkManager netWorkManager;
+
+
 
     private   RegistrarPedidoFragment registrarPedidoFragment;
 
@@ -81,6 +87,13 @@ public class ListaClienteFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        //obtenermos la url base de de configuraciones
+
+       // netWorkManager= new NetWorkManager(this);
+       // UrlBase=netWorkManager.GetUrlBaseServices();
+
 
 
         if (getArguments() != null) {
@@ -219,7 +232,7 @@ public class ListaClienteFragment extends Fragment {
     public  void ConsultarServicio(String ruc_empresa) {
 
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.GET,
-                "http://idsierp.dyndns.org:5000/api/Cliente/ObtenerListaClientes?ruc_empresa="+ruc_empresa,
+                "http://idsiserviciosgen-prod.us-east-1.elasticbeanstalk.com/api/Cliente/ObtenerListaClientes?ruc_empresa="+ruc_empresa,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override

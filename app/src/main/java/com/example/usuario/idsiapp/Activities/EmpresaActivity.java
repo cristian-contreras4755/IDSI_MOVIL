@@ -1,18 +1,14 @@
 package com.example.usuario.idsiapp.Activities;
 
 import android.Manifest;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -25,13 +21,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.usuario.idsiapp.Common.AlertManager;
 import com.example.usuario.idsiapp.Common.NetWorkManager;
 import com.example.usuario.idsiapp.Common.SessionManager;
 import com.example.usuario.idsiapp.Models.Empresa;
 import com.example.usuario.idsiapp.R;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -48,6 +42,10 @@ public class EmpresaActivity extends AppCompatActivity {
     private SessionManager sessionManager;
     private RequestQueue RQue;
     private NetWorkManager netWorkManager;
+    private String UrlBase;
+
+
+
 
 
 
@@ -56,8 +54,14 @@ public class EmpresaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empresa);
+
+
+
+
         sessionManager= new SessionManager(getApplicationContext());
         netWorkManager= new NetWorkManager(getApplicationContext());
+        UrlBase=netWorkManager.GetUrlBaseServices();
+
         RQue=Volley.newRequestQueue(getApplicationContext());
 
         SolicitarPermiso();
@@ -132,7 +136,7 @@ public class EmpresaActivity extends AppCompatActivity {
     public void   ValidarUsuarioVendedor(final String Ruc,  final String Empresa,final String Usuario, final String Cod_vendedor){
 
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.POST,
-                "http://idsierp.dyndns.org:5000/api/Seguridad/ValidaUsuarioVendedorMovil?ruc="+Ruc+"&usuario="+Usuario,
+                UrlBase+"/Seguridad/ValidaUsuarioVendedorMovil?ruc="+Ruc+"&usuario="+Usuario,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -271,7 +275,7 @@ public class EmpresaActivity extends AppCompatActivity {
     public void   ConsultarConfGeolocalizacion(String Ruc,String Cod_vededor){
 
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.POST,
-                "http://idsierp.dyndns.org:5000/api/Seguridad/ConsultarConfGeolocalizacion?ruc_empresa="+Ruc+"&cod_vendedor="+Cod_vededor,
+                UrlBase+"/Seguridad/ConsultarConfGeolocalizacion?ruc_empresa="+Ruc+"&cod_vendedor="+Cod_vededor,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override

@@ -51,6 +51,8 @@ public class ListaProductoActivity extends AppCompatActivity  implements TextWat
       private NetWorkManager netWorkManager;
 
 
+    private String UrlBase;
+
 
 
 
@@ -60,6 +62,7 @@ public class ListaProductoActivity extends AppCompatActivity  implements TextWat
         setContentView(R.layout.activity_lista_producto);
         sessionManager= new SessionManager(getApplicationContext());
         netWorkManager= new NetWorkManager(getApplicationContext());
+        UrlBase=netWorkManager.GetUrlBaseServices();
 
 
 
@@ -115,7 +118,7 @@ public class ListaProductoActivity extends AppCompatActivity  implements TextWat
     public  void ConsultarServicio(String ruc_empresa) {
         AlertEspera("Espere","Cargando...");
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.GET,
-                "http://idsierp.dyndns.org:5000/api/Producto/ObtenerListaProductos?ruc_Empresa="+ruc_empresa,
+                UrlBase+"/Producto/ObtenerListaProductos?ruc_Empresa="+ruc_empresa,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override

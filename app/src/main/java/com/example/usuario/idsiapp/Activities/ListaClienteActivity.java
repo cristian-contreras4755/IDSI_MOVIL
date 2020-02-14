@@ -1,7 +1,6 @@
 package com.example.usuario.idsiapp.Activities;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -9,14 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,11 +20,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.usuario.idsiapp.Adapters.AdaptadorListaCliente;
-import com.example.usuario.idsiapp.Common.AlertManager;
 import com.example.usuario.idsiapp.Common.NetWorkManager;
 import com.example.usuario.idsiapp.Common.SessionManager;
 import com.example.usuario.idsiapp.Models.Cliente;
-import com.example.usuario.idsiapp.Models.Producto;
 import com.example.usuario.idsiapp.R;
 
 import org.json.JSONArray;
@@ -51,6 +44,11 @@ public class ListaClienteActivity extends AppCompatActivity  implements TextWatc
     private ProgressDialog progressDialog;
     private SessionManager sessionManager;
     private NetWorkManager netWorkManager;
+    private String UrlBase;
+
+
+
+
 
 
 
@@ -60,8 +58,13 @@ public class ListaClienteActivity extends AppCompatActivity  implements TextWatc
         setContentView(R.layout.activity_lista_cliente);
         sessionManager= new SessionManager(getApplicationContext());
         netWorkManager= new NetWorkManager(getApplicationContext());
+        UrlBase=netWorkManager.GetUrlBaseServices();
 
-       // alertManager= new AlertManager(getApplicationContext(),progressDialog);
+
+
+
+
+        // alertManager= new AlertManager(getApplicationContext(),progressDialog);
         txt_buscar_cliente=(TextView) findViewById(R.id.txt_buscar_cliente);
         txt_buscar_cliente.setEnabled(false);
 
@@ -108,7 +111,7 @@ public class ListaClienteActivity extends AppCompatActivity  implements TextWatc
     public  void ConsultarServicio(String ruc_empresa) {
         AlertEspera("Espere","Cargando...");
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.GET,
-                "http://idsierp.dyndns.org:5000/api/Cliente/ObtenerListaClientes?ruc_empresa="+ruc_empresa,
+                UrlBase+"/Cliente/ObtenerListaClientes?ruc_empresa="+ruc_empresa,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override
