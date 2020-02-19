@@ -261,7 +261,7 @@ public class GeoManager extends Activity {
 
 
         }catch (Exception e){
-            Toast.makeText(context,"No pudimos reportar tu ubicacion, verifique su conexion de internet y GPS"+e.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(context,"No pudimos reportar tu ubicación, verifique su conexion de internet y GPS"+e.getMessage(),Toast.LENGTH_LONG).show();
         }
     }
 
