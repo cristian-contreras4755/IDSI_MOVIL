@@ -178,15 +178,18 @@ public class Login extends AppCompatActivity {
 
                         }else if(networkResponse != null && networkResponse.statusCode ==HttpsURLConnection.HTTP_INTERNAL_ERROR) {
 
-                            AlertaAdvertencia("INICIO DE SESSION","Error Interno, intenleno nuevamente dentro de unos minutos");
+                            AlertaAdvertencia("INICIO DE SESSION","Status code:"+networkResponse.statusCode+", intenleno nuevamente dentro de unos minutos");
                             progressDialog.dismiss();
                         }else {
-                            AlertaAdvertencia("INICIO DE SESSION","Error Interno, intenleno nuevamente dentro de unos minutos");
+                            AlertaAdvertencia("INICIO DE SESSION","Status code:"+networkResponse.statusCode+", intenleno nuevamente dentro de unos minutos");
                             progressDialog.dismiss();
                         }
 
                     }catch (Exception ex){
-                        AlertaAdvertencia("INICIO DE SESSION","Error Interno, intenleno nuevamente dentro de unos minutos");
+
+                     //   AlertaAdvertencia("INICIO DE SESSION","Error Interno, intenleno nuevamente dentro de unos minutos: "+ex.getMessage()+"-"+error.getMessage()+error.networkResponse+"-"+error.getCause()+"-"+UrlBase+"/Seguridad/Loginmovil");
+                        AlertaAdvertencia("INICIO DE SESSION","Error Interno, intenleno nuevamente dentro de unos minutos: "+ex.getMessage());
+
                         progressDialog.dismiss();
                     }
 

@@ -232,7 +232,7 @@ public class ListaClienteFragment extends Fragment {
     public  void ConsultarServicio(String ruc_empresa) {
 
         JsonObjectRequest Requeste = new JsonObjectRequest(Request.Method.GET,
-                "http://3.84.91.212/ServiciosGen/api/Cliente/ObtenerListaClientes?ruc_empresa="+ruc_empresa,
+                "http://idsimovil.dyndns.org/ServiciosGen/api/Cliente/ObtenerListaClientes?ruc_empresa="+ruc_empresa,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override

@@ -42,8 +42,8 @@ public class NetWorkManager {
     }
 
     public String GetUrlBaseServices(){
-       // return "http://idsierp.dyndns.org:5000/api" ;
-        return "http://3.84.91.212/ServiciosGen/api" ;
+        //return "http://idsierp.dyndns.org:5000/api" ;
+       return "http://idsimovil.dyndns.org/ServiciosGen/api" ;
     }
 
 

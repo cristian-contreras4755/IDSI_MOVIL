@@ -229,7 +229,7 @@ public class GeoManager extends Activity {
 
 
                             if (locationTelGps==null ){
-                                Toast.makeText(context,"el telefono devuelve un valor nulo pese a estar activo el gps ",Toast.LENGTH_LONG).show();
+                             //CQ:19-02-2020   Toast.makeText(context,"el telefono devuelve un valor nulo pese a estar activo el gps ",Toast.LENGTH_LONG).show();
                             return;
                             }
 
@@ -382,7 +382,7 @@ public class GeoManager extends Activity {
 
              Lon_prueba=location.getLongitude();
              Lat_prueba=location.getLatitude();
-            Toast.makeText(context,"gps osilacion: "+Lon_prueba +"- "+Lat_prueba,Toast.LENGTH_LONG).show();
+           //CQ:19-02-2020 Toast.makeText(context,"gps osilacion: "+Lon_prueba +"- "+Lat_prueba,Toast.LENGTH_LONG).show();
 
         }
 
