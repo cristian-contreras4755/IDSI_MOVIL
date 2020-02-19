@@ -43,7 +43,7 @@ public class NetWorkManager {
 
     public String GetUrlBaseServices(){
        // return "http://idsierp.dyndns.org:5000/api" ;
-        return "http://idsiserviciosgen-prod.us-east-1.elasticbeanstalk.com/api" ;
+        return "http://3.84.91.212/ServiciosGen/api" ;
     }
 
 
